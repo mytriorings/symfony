@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  php_apache:
+    build:
+      context: ./env/php_apache/
+    container_name: medial_php_apache
+    ports:
+      - 80:80
+    networks:
+      frontend:
+        aliases:
+          - webdev.local
+      backend:
+    volumes:
+      - ./:/var/www/html/
+  mysql:
+    build:
+      context: ./env/mysql/
+    container_name: medial_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: webdev
+      MYSQL_DATABASE: webdev
+      MYSQL_USER: webdev
+      MYSQL_PASSWORD: webdev
+    networks:
+      - backend
+    volumes:
+    - ./data/db/:/var/lib/mysql/
+networks:
+  frontend:
+  backend:

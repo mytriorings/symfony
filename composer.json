@@ -1,0 +1,24 @@
+{
+    "name": "medial/boilerplate",
+    "description": "PHP Boilerplate.",
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "authors": [
+        {
+            "name": "Kamil",
+            "email": "kamil@medial.pl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\" : "tests/"
+        }
+    }
+}
