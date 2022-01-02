@@ -24,6 +24,8 @@ services:
       MYSQL_DATABASE: webdev
       MYSQL_USER: webdev
       MYSQL_PASSWORD: webdev
+    ports:
+      - 3306:3306
     networks:
       - backend
     volumes:

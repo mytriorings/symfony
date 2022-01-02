@@ -32,14 +32,15 @@ RUN docker-php-ext-install \
     xsl \
     zip
 
+RUN mv /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini \
+    && pear config-set php_ini /usr/local/etc/php/php.ini
+
 RUN apt-get install autoconf g++ make \
     && pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    && pecl install ast
 
-RUN mv /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php \
     && mv /var/www/html/composer.phar /usr/local/bin/composer \
-    && chmod +X /usr/local/bin/composer \
-    && composer install
+    && chmod +X /usr/local/bin/composer
