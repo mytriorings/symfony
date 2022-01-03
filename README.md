@@ -13,4 +13,5 @@ Simple Docker boilerplate for PHP projects
 - Docker compose 1.27.4 or newer
 
 ## Usage
-`./run.sh`
+- point `webdev.local` to `127.0.0.1` in your `/etc/hosts`
+- run `./run.sh`
