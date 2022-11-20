@@ -1,35 +1,33 @@
 version: "3.9"
 services:
-  php_apache:
+  medial_symfony:
     build:
-      context: ./env/php_apache/
-    container_name: medial_php_apache
+      context: ./containers/medial_symfony/
+    container_name: medial_symfony
     ports:
       - 80:80
+      - 8000:8000
     networks:
       frontend:
-        aliases:
-          - webdev.local
       backend:
     volumes:
-      - ./:/var/www/html/
-  mysql:
+      - ./symfony/:/var/www/html/
+  mariadb:
     build:
-      context: ./env/mysql/
-    container_name: medial_mysql
+      context: ./containers/db/
+    container_name: medial_mariadb
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: webdev
-      MYSQL_DATABASE: webdev
-      MYSQL_USER: webdev
-      MYSQL_PASSWORD: webdev
+      MARIADB_ROOT_PASSWORD: webdev
+      MARIADB_DATABASE: webdev
+      MARIADB_USER: webdev
+      MARIADB_PASSWORD: webdev
     ports:
       - 3306:3306
     networks:
       - backend
     volumes:
-    - ./data/db/:/var/lib/mysql/
+    - ./data/db/:/var/lib/db/
 networks:
   frontend:
   backend:

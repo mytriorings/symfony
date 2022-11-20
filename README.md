@@ -1,9 +1,10 @@
 # Docker PHP boilerplate
-Simple Docker boilerplate for PHP projects
+Simple Docker boilerplate for Symfony projects
 
 ## Features
 - PHP with built in Httpd server
-- MySQL
+- Maria DB
+- Symfony CMD
 - Composer
 - PHPUnit
 - Phan
