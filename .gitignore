@@ -1,5 +1,5 @@
 .idea
 .phpunit.cache/
-data
-vendor
-symfony
+data/*/**
+vendor/*/**
+symfony/*/**
