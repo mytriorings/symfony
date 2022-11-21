@@ -1,6 +1,9 @@
 # Docker PHP boilerplate
 Simple Docker boilerplate for Symfony projects
 
+# Status
+Work In Progress!
+
 ## Features
 - PHP with built in Httpd server
 - Maria DB
@@ -14,5 +17,4 @@ Simple Docker boilerplate for Symfony projects
 - Docker compose 1.27.4 or newer
 
 ## Usage
-- point `webdev.local` to `127.0.0.1` in your `/etc/hosts`
-- run `./run.sh`
+- `docker-compose up`
