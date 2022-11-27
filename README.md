@@ -5,10 +5,13 @@ Simple Docker boilerplate for Symfony projects
 Work In Progress!
 
 ## Features
-- PHP with built in Httpd server
+- PHP with built-in Web server
 - Maria DB
 - Symfony CMD
 - Composer
+- Node
+
+## To Do
 - PHPUnit
 - Phan
 
