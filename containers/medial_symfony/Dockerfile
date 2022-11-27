@@ -1,7 +1,7 @@
 FROM php:apache
 LABEL maintainer="kamil@medial.pl"
 
-RUN sed -i -e "s#DocumentRoot /var/www/html#DocumentRoot /var/www/html/symfony/public#g" /etc/apache2/sites-enabled/000-default.conf
+RUN sed -i -e "s#DocumentRoot /var/www/html#DocumentRoot /var/www/html/public#g" /etc/apache2/sites-enabled/000-default.conf
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \

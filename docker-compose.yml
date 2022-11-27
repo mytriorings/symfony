@@ -28,6 +28,15 @@ services:
       - backend
     volumes:
     - ./data/db/:/var/lib/db/
+  node:
+    build:
+      context: ./containers/node/
+    container_name: medial_node
+    networks:
+      frontend:
+      backend:
+    volumes:
+      - ./symfony/:/home/node/app/
 networks:
   frontend:
   backend:
