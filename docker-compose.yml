@@ -1,9 +1,9 @@
 version: "3.9"
 services:
-  medial_symfony:
+  php:
     build:
-      context: ./containers/medial_symfony/
-    container_name: medial_symfony
+      context: ./containers/php/
+    container_name: medial_php
     ports:
       - 80:80
       - 8000:8000
