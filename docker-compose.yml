@@ -3,6 +3,9 @@ services:
   php:
     build:
       context: ./containers/php/
+      args:
+        - GIT_USER_NAME=${GIT_USER_NAME}
+        - GIT_USER_EMAIL=${GIT_USER_EMAIL}
     container_name: medial_php
     ports:
       - 80:80
@@ -18,10 +21,10 @@ services:
     container_name: medial_mariadb
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MARIADB_ROOT_PASSWORD: webdev
-      MARIADB_DATABASE: webdev
-      MARIADB_USER: webdev
-      MARIADB_PASSWORD: webdev
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
     ports:
       - 3306:3306
     networks:

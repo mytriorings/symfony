@@ -1,6 +1,9 @@
 FROM php:apache
 LABEL maintainer="kamil@medial.pl"
 
+ARG GIT_USER_NAME
+ARG GIT_USER_EMAIL
+
 RUN sed -i -e "s#DocumentRoot /var/www/html#DocumentRoot /var/www/html/public#g" /etc/apache2/sites-enabled/000-default.conf
 
 RUN apt-get update && \
@@ -46,3 +49,5 @@ RUN curl --silent --show-error https://getcomposer.org/installer | php \
 
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash \
     && apt install -y symfony-cli
+
+RUN git config --global user.email ${GIT_USER_NAME} && git config --global user.name ${GIT_USER_EMAIL}
