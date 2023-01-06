@@ -30,7 +30,7 @@ services:
     networks:
       - backend
     volumes:
-    - ./data/db/:/var/lib/db/
+    - ./data/db/:/var/lib/mysql/
   node:
     build:
       context: ./containers/node/
