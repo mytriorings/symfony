@@ -11,10 +11,6 @@ Work In Progress!
 - Composer
 - Node
 
-## To Do
-- PHPUnit
-- Phan
-
 ## Requirements
 - Docker 18.09.7 or newer
 - Docker compose 1.27.4 or newer
