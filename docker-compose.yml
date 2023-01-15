@@ -1,11 +1,7 @@
 version: "3.9"
 services:
   php:
-    build:
-      context: ./containers/php/
-      args:
-        - GIT_USER_NAME=${GIT_USER_NAME}
-        - GIT_USER_EMAIL=${GIT_USER_EMAIL}
+    image: medial/symfony:latest
     container_name: medial_php
     ports:
       - 80:80
@@ -16,8 +12,7 @@ services:
     volumes:
       - ./symfony/:/var/www/html/
   mariadb:
-    build:
-      context: ./containers/db/
+    image: mariadb:latest
     container_name: medial_mariadb
     command: --default-authentication-plugin=mysql_native_password
     environment:
